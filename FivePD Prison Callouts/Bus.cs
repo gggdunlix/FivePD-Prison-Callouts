@@ -99,7 +99,7 @@ new Vector3(1705.928f, 2408.591f, 43.10583f),
 
             prisondriver.Task.FleeFrom(player);
 
-            Utilities.ExcludeVehicleFromTrafficStop(bus.NetworkId, true)
+            Utilities.ExcludeVehicleFromTrafficStop(bus.NetworkId, true);
             
 
 

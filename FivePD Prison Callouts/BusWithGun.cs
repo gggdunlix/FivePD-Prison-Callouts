@@ -7,9 +7,9 @@ using FivePD.API;
 using FivePD.API.Utils;
 using CitizenFX.Core.Native;
 
-namespace StolenPrisonBus
+namespace StolenPrisonBusWithGun
 {
-    [CalloutProperties("Stolen Prison Bus", "GGGDunlix", "0.1.0")]
+    [CalloutProperties("Stolen Prison Bus With Guns", "GGGDunlix", "0.1.0")]
     public class StolenPrisonBus : Callout
     {
         Ped prisoner1, prisoner2, prisoner3, prisoner4, prisondriver;
@@ -43,8 +43,8 @@ new Vector3(1705.928f, 2408.591f, 43.10583f),
             Vector3 location = coordinates.OrderBy(x => World.GetDistance(x, Game.PlayerPed.Position)).Skip(3).First();
 
             InitInfo(location);
-            ShortName = "Stolen Prison Bus";
-            CalloutDescription = "5 prisoners have stolen a Prison Bus from Bolingbroke Penitentiary. Respond in Code 3.";
+            ShortName = "Stolen Prison Bus with Guns";
+            CalloutDescription = "5 prisoners have stolen a Prison Bus from Bolingbroke Penitentiary, and 2 of them have weapons. Respond in Code 3.";
             ResponseCode = 3;
             StartDistance = 60f;
         }
@@ -99,8 +99,14 @@ new Vector3(1705.928f, 2408.591f, 43.10583f),
 
             prisondriver.Task.FleeFrom(player);
 
-            Utilities.ExcludeVehicleFromTrafficStop(bus.NetworkId, true)
-            
+            Utilities.ExcludeVehicleFromTrafficStop(bus.NetworkId, true);
+
+            prisoner3.Weapons.Give(WeaponHash.Pistol50, 9999, true, true);
+            prisoner4.Weapons.Give(WeaponHash.PistolMk2, 9999, true, true);
+
+            prisoner3.Task.ShootAt(player);
+            prisoner4.Task.ShootAt(player);
+
 
 
 

@@ -55,7 +55,7 @@ new Vector3(1673.594f, 2705.125f, 45.23011f),
 
             InitInfo(location);
             ShortName = "Escaped Prisoner with Weapon";
-            CalloutDescription = "A prisoner escaped from the San Andreas State Penitentiary, and has a guard's gun.";
+            CalloutDescription = "A prisoner escaped from the San Andreas State Penitentiary, and has a guard's gun. Respond in Code 3 High.";
             ResponseCode = 3;
             StartDistance = 60f;
         }

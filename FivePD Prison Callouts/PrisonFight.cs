@@ -26,7 +26,7 @@ namespace PrisonFight
 
             InitInfo(location);
             ShortName = "Prison Fight";
-            CalloutDescription = "2 prisoners are fighitng at the Bolingbroke Penitentiary. Respond in Code 3.";
+            CalloutDescription = "2 prisoners are fighting at the Bolingbroke Penitentiary. Respond in Code 3.";
             ResponseCode = 3;
             StartDistance = 60f;
         }
